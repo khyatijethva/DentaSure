@@ -1,0 +1,20 @@
+{
+  "name": "dentasure",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "dev:user": "turbo dev --filter=@dentasure/user",
+    "dev:dashboard": "turbo dev --filter=@dentasure/dashboard",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "clean": "turbo clean"
+  },
+  "devDependencies": {
+    "turbo": "^2",
+    "prettier": "^3",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@10.30.3"
+}
