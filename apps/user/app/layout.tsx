@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { dmSans } from "@dentasure/ui/fonts";
+import { Header } from "@/components/header/header";
+import { Footer } from "@/components/footer/footer";
+import "@dentasure/ui/styles/base.css";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "@dentasure/ui/styles/utilities.css";
 
 export const metadata: Metadata = {
   title: "DentaSure — Patient Portal",
@@ -23,11 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className={dmSans.variable}>
+      <body>
+        <div className="main-wrapper">
+          <Header />
+          <main className="main">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

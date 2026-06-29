@@ -1,0 +1,35 @@
+.headerWrapper{
+  border-bottom: 1px solid #6242311F;
+  margin-bottom: var(--space-6);
+}
+
+.logo{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logoLink{
+  position: relative;
+  top: var(--space-6);
+  background: var(--jt-light-exact);
+  z-index: 6;
+  padding: 0 var(--space-8);
+}
+
+.navLinks{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navLinks ul li a{
+  font-size: var(--base-font);
+  color: var(--jt-neutral-950);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  font-weight: var(--font-weight-500);
+  font-family: var(--font-primary);
+}

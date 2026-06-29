@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./fonts": "./fonts/index.ts",
+    "./styles/*": "./styles/*"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -13,6 +15,7 @@
     "@dentasure/typescript-config": "workspace:*",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "next": "^15",
     "react": "^19",
     "typescript": "^5"
   },
