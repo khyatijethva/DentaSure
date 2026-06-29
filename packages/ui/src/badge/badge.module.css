@@ -1,0 +1,61 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: var(--font-xs);
+  font-weight: var(--font-weight-600);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ── variants ── */
+.default {
+  background: var(--jt-neutral-50);
+  color: var(--jt-neutral-800);
+  border: 1px solid var(--jt-border-default);
+}
+
+.confirmed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.pending {
+  background: var(--jt-yellow-50);
+  color: oklch(from var(--jt-yellow-base) calc(l - 0.2) c h);
+  border: 1px solid oklch(from var(--jt-yellow-base) l c h / 0.35);
+}
+
+.cancelled {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.info {
+  background: var(--jt-skyBlue-50);
+  color: oklch(from var(--jt-skyBlue-base) calc(l - 0.15) c h);
+}
+
+.brand {
+  background: var(--jt-neutral-50);
+  color: var(--jt-dark-exact);
+  border: 1px solid var(--jt-border-default);
+}
+
+.terra {
+  background: oklch(from oklch(0.69 0.09 48) l c h / 0.15);
+  color: oklch(0.45 0.07 48);
+}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { dmSans } from "@dentasure/ui/fonts";
+import { dmSans, newsreader } from "@dentasure/ui/fonts";
 import { Header } from "@/components/header/header";
 import { Footer } from "@/components/footer/footer";
 import "@dentasure/ui/styles/base.css";
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={dmSans.variable}>
+    <html lang="en" className={`${dmSans.variable} ${newsreader.variable}`}>
       <body>
         <div className="main-wrapper">
           <Header />

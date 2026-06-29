@@ -60,6 +60,9 @@
 .justify-between {
   justify-content: space-between;
 }
+.flex-colmn{
+  flex-direction: column;
+}
 
 /* Grid */
 .grid {
@@ -232,43 +235,7 @@
 }
 
 .section-margin {
-  /* margin: var(--section-margin) 0; */
-  margin: clamp(calc(var(--section-margin) / 3), 12vw, var(--section-margin)) 0;
-}
-
-/* Margin - Logical start/end instead of left/right */
-.ml-auto {
-  margin-inline-start: auto;
-}
-.mr-auto {
-  margin-inline-end: auto;
-}
-
-/* Centering shorthand using logical properties */
-.mx-auto {
-  margin-inline: auto;
-}
-
-/* =========================================
-   LINE HEIGHT UTILITIES
-   ========================================= */
-.leading-none {
-  line-height: var(--leading-none);
-}
-.leading-tight {
-  line-height: var(--leading-tight);
-}
-.leading-snug {
-  line-height: var(--leading-snug);
-}
-.leading-normal {
-  line-height: var(--leading-normal);
-}
-.leading-relaxed {
-  line-height: var(--leading-relaxed);
-}
-.leading-loose {
-  line-height: var(--leading-loose);
+  margin: var(--section-margin) 0;
 }
 
 /* text alignment */
@@ -277,6 +244,9 @@
 }
 .text-center {
   text-align: center;
+}
+.full-width{
+  width: 100%;
 }
 
 /* images */

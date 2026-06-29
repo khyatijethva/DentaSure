@@ -1,7 +1,8 @@
-/* app-specific overrides — reset and base font handled by @dentasure/ui/styles/base.css */
+/* app-level overrides — base reset + tokens live in @dentasure/ui/styles/base.css */
+
 body {
-  color: #111827;
-  background: #ffffff;
+  color: var(--jt-text-default);
+  background: var(--jt-light-exact);
 }
 
 .main-wrapper {

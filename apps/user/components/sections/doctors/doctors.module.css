@@ -1,0 +1,141 @@
+/* ══ DOCTORS ══════════════════════════════════════════════════ */
+
+.heading {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--space-12);
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+  font-weight: var(--font-weight-700);
+  line-height: var(--leading-tight);
+  color: var(--jt-text-default);
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+}
+
+.title em {
+  font-style: italic;
+  font-weight: var(--font-weight-700);
+  color: var(--jt-dark-exact);
+}
+
+.sub {
+  font-family: var(--font-primary);
+  font-size: var(--font-md);
+  color: var(--jt-text-muted);
+  margin-top: var(--space-4);
+  line-height: var(--leading-relaxed);
+}
+
+/* 2-column doctor card grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+}
+
+.card {
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  border: 1px solid var(--jt-border-default);
+  background: var(--jt-surface-card);
+  -webkit-transition: box-shadow var(--time-normal) ease;
+  transition: box-shadow var(--time-normal) ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 32px oklch(from var(--jt-dark-base) l c h / 0.12);
+}
+
+.photo {
+  height: 340px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  /* swap with: background: url('/images/dr-name.jpg') center/cover */
+}
+
+.avatar {
+  width: var(--size-24);
+  height: var(--size-24);
+  border-radius: 50%;
+  color: var(--jt-light-exact);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0.02em;
+}
+
+.info {
+  padding: var(--space-5) var(--space-6) var(--space-6);
+  border-top: 1px solid var(--jt-border-subtle);
+}
+
+.divider {
+  height: 2px;
+  width: 32px;
+  background: var(--jt-dark-exact);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+}
+
+.name {
+  font-family: var(--font-primary);
+  font-size: var(--h5-font);
+  font-weight: var(--font-weight-700);
+  color: var(--jt-text-default);
+  margin-bottom: var(--space-1);
+}
+
+.qual {
+  font-family: var(--font-primary);
+  font-size: var(--font-sm);
+  color: var(--jt-dark-exact);
+  font-weight: var(--font-weight-500);
+  margin-bottom: var(--space-3);
+}
+
+.desc {
+  font-family: var(--font-primary);
+  font-size: var(--font-sm);
+  color: var(--jt-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .grid {
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  .photo {
+    height: 280px;
+  }
+}

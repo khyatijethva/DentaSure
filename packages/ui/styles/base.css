@@ -21,10 +21,58 @@ html {
 body {
 	margin: 0;
 	box-sizing: border-box;
-	color: var(--jt-neutral-50);
-	font-size: var(--base-font);
+	color: var(--jt-dark-exact);
+	font-size: var(--font-md);
 	line-height: var(--leading-normal);
 	overflow-x: hidden;
 	font-weight: var(--font-weight-400);
-	background: var(--jt-dark-exact);
+	background: var(--jt-light-exact);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-primary);
+	font-weight: var(--font-weight-500);
+	margin-bottom: var(--space-4);
+	color: var(--jt-dark-exact);
+	line-height: var(--leading-none);
+}
+
+h1 {
+  font-size: var(--h1-font);
+}
+
+h2 {
+  font-size: var(--h2-font);
+}
+
+h3 {
+  font-size: var(--h3-font);
+}
+
+h4 {
+  font-size: var(--h4-font);
+}
+
+h5 {
+  font-size: var(--h5-font);
+}
+
+h6 {
+  font-size: var(--h6-font);
+}
+ 
+h1 em,
+h2 em,
+h3 em,
+h4 em,
+h5 em,
+h6 em{
+	font-family: var(--font-secondary);
+	font-weight: var(--font-weight-700);
 }
