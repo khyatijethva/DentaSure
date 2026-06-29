@@ -1,5 +1,4 @@
-import { Button } from "@dentasure/ui";
-import { CalendarIcon, PhoneIcon } from "@dentasure/ui";
+import { Button, Icon } from "@dentasure/ui";
 import styles from "./cta.module.css";
 
 export function CtaSection() {
@@ -17,13 +16,13 @@ export function CtaSection() {
             care designed around your needs.
           </p>
           <div className={styles.actions}>
-            <Button variant="outline" icon={<PhoneIcon />} className={styles.phoneBtn}>
+            <Button variant="outline" icon={<Icon name="phone" size={16} />} className={styles.phoneBtn}>
               +91 79845 72082
             </Button>
-            <Button variant="outline" icon={<PhoneIcon />} className={styles.phoneBtn}>
+            <Button variant="outline" icon={<Icon name="phone" size={16} />} className={styles.phoneBtn}>
               +91 79845 72082
             </Button>
-            <Button icon={<CalendarIcon />} className={styles.bookBtn}>
+            <Button icon={<Icon name="calendar" size={16} />} className={styles.bookBtn}>
               Book Consultation
             </Button>
           </div>

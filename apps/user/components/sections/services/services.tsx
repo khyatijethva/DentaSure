@@ -1,5 +1,4 @@
-import { Button } from "@dentasure/ui";
-import { CalendarIcon, PhoneIcon, ToothIcon } from "@dentasure/ui";
+import { Button, Icon } from "@dentasure/ui";
 import styles from "./services.module.css";
 
 const SERVICES = [
@@ -52,36 +51,45 @@ const SERVICES = [
 
 export function ServicesSection() {
   return (
-    <section className={`${styles.services}`}>
+    <section className={`${styles.services} section-margin-bottom`}>
       <div className="container">
         <div className={styles.inner}>
-          <div className={styles.left}>
-            <h2 className={styles.title}>
-              Comprehensive Care
-              <br />
-              Under <em>One Roof</em>
-            </h2>
-            <p className={styles.desc}>
-              From routine cleanings to complete smile makeovers, we utilise the
-              latest technology to ensure your treatment is efficient, effective,
-              and comfortable.
-            </p>
-            <div className={styles.actions}>
-              <Button variant="outline" icon={<PhoneIcon />}>
-                +91 79845 72082
-              </Button>
-              <Button icon={<CalendarIcon />}>Book Consultation</Button>
+          <div className="flex gap-4 flex-column justify-between">
+            <div className={styles.content}>
+              <h2 className="title">
+                Comprehensive Care
+                <br />
+                Under <em>One Roof</em>
+              </h2>
+              <p className="subtitle">
+                From routine cleanings to complete smile makeovers, we utilise
+                the latest technology to ensure your treatment is efficient,
+                effective, and comfortable.
+              </p>
+            </div>
+            <div className={`flex justify-center gap-2 flex-column ${styles.buttons}`}>
+              <div className="flex gap-2">
+                <Button variant="outline" icon={<Icon name="phone" size={20} />} className="full-width">
+                  +91 79845 72082
+                </Button>
+                <Button variant="outline" icon={<Icon name="phone" size={20} />} className="full-width">
+                  +91 79845 72082
+                </Button>
+              </div>
+              <Button icon={<Icon name="calendar" size={20} />} justifyContent="space-between">Book Consultation</Button>
             </div>
           </div>
 
-          <div className={styles.grid}>
+          <div className={`grid grid-cols-3 gap-4 ${styles.grid}`}>
             {SERVICES.map((svc) => (
-              <div key={svc.id} className={styles.item}>
+              <div key={svc.id} className={`flex gap-4 flex-column p-8 ${styles.serviceitem}`}>
                 <div className={styles.iconWrap}>
-                  <ToothIcon size={20} />
+                  <Icon name="dentistry" size={34} />
                 </div>
-                <h3 className={styles.itemName}>{svc.name}</h3>
-                <p className={styles.itemDesc}>{svc.desc}</p>
+                <div className={styles.cardDescription}>
+                  <h4 className={styles.itemName}>{svc.name}</h4>
+                  <p className={styles.itemDesc}>{svc.desc}</p>
+                </div>
               </div>
             ))}
           </div>

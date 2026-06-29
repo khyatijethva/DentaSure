@@ -1,117 +1,75 @@
-import type { SVGAttributes } from "react";
+import type { SVGProps } from "react";
 
-type IconProps = SVGAttributes<SVGElement> & { size?: number };
+export type IconName =
+  | "calendar"
+  | "phone"
+  | "dentistry"
+  | "arrow-right"
+  | "chevron-down"
+  | "star";
 
-export function CalendarIcon({ size = 16, ...props }: IconProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-      <line x1="16" y1="2" x2="16" y2="6" />
-      <line x1="8" y1="2" x2="8" y2="6" />
-      <line x1="3" y1="10" x2="21" y2="10" />
-    </svg>
-  );
-}
+type IconProps = SVGProps<SVGSVGElement> & { name: IconName; size?: number };
 
-export function PhoneIcon({ size = 16, ...props }: IconProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.06 6.06l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-    </svg>
-  );
-}
+export function Icon({ name, size = 16, ...props }: IconProps) {
+  const shared = { width: size, height: size, "aria-hidden": true as const };
 
-export function ArrowRightIcon({ size = 16, ...props }: IconProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <line x1="5" y1="12" x2="19" y2="12" />
-      <polyline points="12 5 19 12 12 19" />
-    </svg>
-  );
-}
+  switch (name) {
+    case "calendar":
+      return (
+        <svg {...shared} viewBox="0 0 16 17" fill="none" {...props}>
+          <path
+            fill="currentColor"
+            d="M11.458 13.638H9.583a.614.614 0 0 1-.445-.18.614.614 0 0 1-.18-.445c0-.177.06-.326.18-.445a.614.614 0 0 1 .445-.18h1.875v-1.875c0-.177.06-.326.18-.445a.614.614 0 0 1 .446-.18c.177 0 .326.06.445.18.12.12.18.268.18.445v1.875h1.875c.177 0 .326.06.446.18.12.12.179.268.179.446 0 .177-.06.326-.18.445a.614.614 0 0 1-.445.18H12.71v1.875c0 .177-.06.326-.18.445a.614.614 0 0 1-.445.18.614.614 0 0 1-.446-.18.614.614 0 0 1-.18-.445v-1.875ZM1.506 14.263c-.42 0-.778-.146-1.069-.438C.146 13.533 0 13.177 0 12.756V3.269c0-.42.146-.778.438-1.069.29-.292.648-.437 1.068-.437h1.154V.641c0-.181.062-.334.184-.457A.62.62 0 0 1 3.302 0c.182 0 .335.061.458.184.123.123.184.276.184.457v1.122h4.647V.625c0-.177.06-.326.18-.446A.614.614 0 0 1 9.215 0c.177 0 .326.06.445.18.12.119.18.268.18.445v1.122h1.153c.421 0 .779.145 1.063.437.291.29.437.648.437 1.068v4.247c0 .177-.06.326-.18.445a.614.614 0 0 1-.445.18.614.614 0 0 1-.446-.18.614.614 0 0 1-.18-.445V6.603H1.25v6.153c0 .064.027.123.08.176.054.054.113.08.177.08h5.072c.177 0 .326.06.445.18.12.12.179.268.179.446 0 .177-.06.326-.18.445a.614.614 0 0 1-.444.18H1.506ZM1.25 5.353h10V3.269c0-.064-.027-.123-.08-.176a.238.238 0 0 0-.177-.08H1.506a.238.238 0 0 0-.176.08.238.238 0 0 0-.08.176V5.353Z"
+          />
+        </svg>
+      );
 
-export function ChevronDownIcon({ size = 18, ...props }: IconProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <polyline points="6 9 12 15 18 9" />
-    </svg>
-  );
-}
+    case "phone":
+      return (
+        <svg {...shared} viewBox="0 0 15 15" fill="none" {...props}>
+          <path
+            fill="currentColor"
+            d="M13.284 14.167c-1.571 0-3.148-.365-4.733-1.095C6.966 12.341 5.509 11.311 4.182 9.98 2.855 8.651 1.826 7.194 1.095 5.612.365 4.03 0 2.454 0 .883A.619.619 0 0 1 .25.252.619.619 0 0 1 .875 0h2.718c.21 0 .396.069.556.206.16.137.263.307.307.509l.477 2.452c.033.227.026.422-.02.586-.047.163-.132.301-.254.412L2.144 4.856a12.74 12.74 0 0 0 1.654 2.294 12.74 12.74 0 0 0 2.293 1.946l1.87-1.886c.13-.136.288-.231.473-.286.185-.046.378-.059.578-.031l2.314.471c.21.055.382.163.515.322.133.159.2.34.2.542v2.702c0 .25-.084.459-.252.625a.619.619 0 0 1-.505.112ZM2.144 4.856 3.63 3.433a.141.141 0 0 0 .042-.109.141.141 0 0 0-.041-.093L3.317 1.378a.15.15 0 0 0-.056-.096.15.15 0 0 0-.104-.032H1.375a.094.094 0 0 0-.08.032.094.094 0 0 0-.032.08c.043.57.136 1.148.28 1.736.143.587.343 1.173.6 1.758Zm7.25 7.202c.552.257 1.128.454 1.728.59.6.136 1.16.217 1.682.243a.094.094 0 0 0 .066-.032.094.094 0 0 0 .026-.063v-1.753a.094.094 0 0 0-.026-.066.094.094 0 0 0-.063-.026l-1.75-.355a.094.094 0 0 0-.066.011.094.094 0 0 0-.047.055l-1.55 1.396Z"
+          />
+        </svg>
+      );
 
-export function ToothIcon({ size = 20, ...props }: IconProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M12 2C9 2 6.5 3.5 5.5 6.5S4.5 11 6 13c.8 1.2 1.5 2.5 1.8 4L9 21h6l1.2-4c.3-1.5 1-2.8 1.8-4 1.5-2 1.5-4 .5-6.5S15 2 12 2z" />
-    </svg>
-  );
-}
+    case "dentistry":
+      return (
+        <svg {...shared} viewBox="0 0 34 35" fill="none" {...props}>
+          <path
+            fill="url(#dentistry-grad)"
+            d="M26.615 0c1.931.013 3.58.7 4.948 2.062C32.931 3.423 33.615 5.069 33.615 7c0 .341-.022.807-.066 1.398-.043.591-.115 1.28-.215 2.068L30.565 30.616c-.128 1.023-.587 1.851-1.378 2.484-.791.633-1.699.95-2.722.95-.651 0-1.241-.157-1.769-.471a5.26 5.26 0 0 1-1.346-1.237l-5.638-7.935a1.207 1.207 0 0 0-.402-.377 1.07 1.07 0 0 0-.553-.123c-.185 0-.503.195-.954.585L10.315 32.192a4.9 4.9 0 0 1-1.446 1.342A3.718 3.718 0 0 1 7.05 34.05c-1.023 0-1.922-.325-2.696-.975C3.579 32.425 3.128 31.589 3 30.566L.28 10.466C.181 9.678.109 8.989.066 8.398.022 7.807 0 7.341 0 7c0-1.931.684-3.58 2.052-4.948C3.42.684 5.069 0 7 0c1.084 0 1.978.158 2.682.475.704.317 1.39.658 2.057 1.025.666.367 1.384.708 2.153 1.025.769.317 1.741.475 2.915.475 1.187 0 2.169-.158 2.944-.475.776-.317 1.497-.658 2.164-1.025.666-.367 1.353-.708 2.061-1.025C24.685.158 25.564 0 26.615 0Zm0 3c-.767 0-1.442.158-2.025.475-.584.317-1.219.658-1.906 1.025-.687.367-1.485.708-2.392 1.025C19.384 5.842 18.223 6 16.807 6c-1.39 0-2.538-.158-3.446-.475-.907-.317-1.705-.658-2.392-1.025-.687-.367-1.329-.708-1.925-1.025C8.448 3.158 7.767 3 7 3c-1.1 0-2.042.392-2.825 1.175C3.392 4.958 3 5.9 3 7c0 .267.017.65.05 1.15.033.5.1 1.083.2 1.75L6 30.15c.033.267.15.475.35.625.2.15.433.225.7.225.205 0 .384-.062.537-.188.152-.124.281-.272.386-.444l5.358-7.554a4.16 4.16 0 0 1 1.512-1.377A4.066 4.066 0 0 1 16.807 21c.693 0 1.345.174 1.957.523.611.348 1.118.805 1.52 1.37l5.439 7.703c.105.139.217.262.336.37.119.107.27.16.455.16.267 0 .508-.075.725-.225.217-.15.342-.358.375-.625L30.365 9.9c.1-.667.167-1.25.2-1.75.033-.5.05-.883.05-1.15 0-1.1-.392-2.042-1.175-2.825C28.657 3.392 27.715 3 26.615 3Z"
+          />
+          <defs>
+            <linearGradient id="dentistry-grad" x1="16.808" y1="0" x2="16.808" y2="34.05" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#B98062" />
+              <stop offset="1" stopColor="#624231" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
 
-export function StarIcon({ size = 14, ...props }: IconProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-    </svg>
-  );
+    case "arrow-right":
+      return (
+        <svg {...shared} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      );
+
+    case "chevron-down":
+      return (
+        <svg {...shared} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      );
+
+    case "star":
+      return (
+        <svg {...shared} viewBox="0 0 24 24" fill="currentColor" {...props}>
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+        </svg>
+      );
+  }
 }

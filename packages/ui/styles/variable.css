@@ -77,9 +77,20 @@
 	--jt-color-danger:  oklch(0.49 0.22 27);      /* red    */
 	--jt-color-info:    var(--jt-skyBlue-exact);
 
+	/* ── Surface aliases ─────────────────────────────────────── */
+	--jt-surface-page:  var(--jt-neutral-50);
+	--jt-surface-card:  var(--jt-light-exact);
+	--jt-surface-muted: var(--jt-neutral-100);
+	--jt-surface-tint:  oklch(from var(--jt-dark-base) 80% c h / 0.04);
+
 	/* ── Border aliases ──────────────────────────────────────── */
 	--jt-border-default: var(--jt-neutral-200);
 	--jt-border-subtle:  var(--jt-neutral-300);
+
+	/* ── Text aliases ────────────────────────────────────────── */
+	--jt-text-default: oklch(0.15 0.02 250);
+	--jt-text-muted:   var(--jt-neutral-600);
+	--jt-text-brand:   var(--jt-dark-exact);
 
 
 	/* ── Spacing ─────────────────────────────────────────────── */
@@ -136,6 +147,7 @@
 	--h6-font: clamp(0.875rem, 0.938vw, 1.125);  /* ≈ 18px */
 	
 	/* size scale */
+	--font-lg:  clamp(3.5rem, 3.333vw, 4rem);      /* ≈ 64px */
 	--font-md:  clamp(0.875rem, 2vw, 1rem);      /* ≈ 14–16px */
 	--font-sm:  clamp(0.8125rem, 0.729vw, 0.875rem); /* ≈ 13–14px */
 	--font-xs:  0.75rem;                           /* 12px      */

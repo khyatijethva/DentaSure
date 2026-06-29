@@ -1,56 +1,9 @@
-/* ══ MISSION ══════════════════════════════════════════════════ */
-
-.mission {
-  border-top: 1px solid var(--jt-border-subtle);
-  border-bottom: 1px solid var(--jt-border-subtle);
-  padding-block: clamp(3.5rem, 8vw, 6rem);
-}
-
-.eyebrow {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: var(--space-3);
-  font-family: var(--font-primary);
-  font-size: var(--font-sm);
-  color: var(--jt-text-muted);
-  font-weight: var(--font-weight-500);
-  margin-bottom: var(--space-8);
-}
-
-.arrow {
+.preTitle{
   color: var(--jt-dark-exact);
-  font-size: 1.1em;
-  line-height: 1;
-  font-style: normal;
+  font-family: var(--font-secondary);
+  margin-bottom: var(--space-6);
 }
-
-.quote {
-  font-family: var(--font-primary);
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: var(--font-weight-400);
-  line-height: var(--leading-snug);
-  color: var(--jt-text-default);
-  border: none;
-  padding: 0;
+.title{
+  font-size: var(--font-lg);
   margin: 0;
-  max-width: 880px;
-  text-wrap: balance;
-  letter-spacing: -0.01em;
-}
-
-.quote em {
-  font-style: italic;
-  font-weight: var(--font-weight-700);
-  color: var(--jt-dark-exact);
-}
-
-/* ── Responsive ── */
-@media (max-width: 768px) {
-  .quote {
-    font-size: clamp(1.25rem, 5vw, 1.75rem);
-  }
 }

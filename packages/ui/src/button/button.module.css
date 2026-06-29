@@ -94,10 +94,6 @@
   line-height: 0;
 }
 
-.icon svg {
-  width: var(--icon-size, 1.1em);
-  height: var(--icon-size, 1.1em);
-}
 
 /* ── Modifiers ─────────────────────────────────────────────── */
 .fullWidth {

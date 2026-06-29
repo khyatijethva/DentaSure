@@ -60,7 +60,7 @@
 .justify-between {
   justify-content: space-between;
 }
-.flex-colmn{
+.flex-column{
   flex-direction: column;
 }
 
@@ -233,9 +233,14 @@
 .mb-8 {
   margin-block-end: var(--space-8);
 }
-
+.mb-12 {
+  margin-block-end: var(--space-12);
+}
 .section-margin {
   margin: var(--section-margin) 0;
+}
+.section-margin-bottom {
+  margin-bottom: var(--section-margin);
 }
 
 /* text alignment */

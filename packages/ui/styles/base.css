@@ -76,3 +76,8 @@ h6 em{
 	font-family: var(--font-secondary);
 	font-weight: var(--font-weight-700);
 }
+
+.subtitle{
+    color: var(--jt-dark-exact);
+    font-size: var(--h6-font);
+}

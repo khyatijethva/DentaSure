@@ -6,6 +6,22 @@
   top: 0;
   z-index: 100;
   background: var(--jt-light-exact);
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition:
+    box-shadow var(--time-normal) ease,
+    background var(--time-normal) ease,
+    padding var(--time-normal) ease;
+  transition:
+    box-shadow var(--time-normal) ease,
+    background var(--time-normal) ease,
+    padding var(--time-normal) ease;
+}
+
+.header[data-scrolled] {
+  background: oklch(from var(--jt-light-base) l c h / 0.92);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  backdrop-filter: blur(12px) saturate(1.4);
+  box-shadow: 0 2px 20px oklch(from var(--jt-dark-base) l c h / 0.08);
 }
 
 /* 3-col grid: nav | logo | cta */
@@ -45,6 +61,11 @@
   -ms-flex-align: center;
   align-items: center;
   line-height: 0;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
 }
 
 /* Nav links — left col */

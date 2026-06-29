@@ -1,5 +1,4 @@
-import { Button } from "@dentasure/ui";
-import { CalendarIcon, PhoneIcon } from "@dentasure/ui";
+import { Button, Icon } from "@dentasure/ui";
 import styles from "./hero.module.css";
 import Image from "next/image";
 const Banner = "/images/banner.jpg";
@@ -15,20 +14,20 @@ export function HeroSection() {
             <br />
             Complete Family <em>Dental Care</em>
           </h1>
-          <p className={styles.sub}>
+          <p className="subtitle mb-8">
             Experience <strong><em>stress-free</em></strong> dental care tailored to
             your family&apos;s unique needs.
           </p>
-          <div className={`flex justify-center gap-2 flex-colmn ${styles.buttons}`}>
+          <div className={`flex justify-center gap-2 flex-column ${styles.buttons}`}>
             <div className="flex gap-2">
-              <Button variant="outline" icon={<PhoneIcon />} iconSize={18} className="full-width">
+              <Button variant="outline" icon={<Icon name="phone" size={20} />} className="full-width">
                 +91 79845 72082
               </Button>
-              <Button variant="outline" icon={<PhoneIcon />} iconSize={18} className="full-width"> 
+              <Button variant="outline" icon={<Icon name="phone" size={20} />} className="full-width">
                 +91 79845 72082
               </Button>
             </div>
-            <Button icon={<CalendarIcon />} iconSize={18} justifyContent="space-between">Book Consultation</Button>
+            <Button icon={<Icon name="calendar" size={20} />} justifyContent="space-between">Book Consultation</Button>
           </div>
         </div>
 

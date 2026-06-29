@@ -1,4 +1,4 @@
-import { StarIcon } from "@dentasure/ui";
+import { Icon } from "@dentasure/ui";
 import styles from "./testimonials.module.css";
 
 const TESTIMONIALS = [
@@ -73,7 +73,7 @@ export function TestimonialsSection() {
               </div>
               <div className={styles.stars}>
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <StarIcon key={i} size={14} />
+                  <Icon key={i} name="star" size={14} />
                 ))}
               </div>
             </div>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@dentasure/ui";
-import { CalendarIcon, PhoneIcon, ChevronDownIcon, ArrowRightIcon } from "@dentasure/ui";
+import { Icon } from "@dentasure/ui";
 import styles from "./why-trust.module.css";
 
 const TRUST_ITEMS = [
@@ -45,10 +45,10 @@ export function WhyTrustSection() {
               and comfortable.
             </p>
             <div className={styles.actions}>
-              <Button variant="outline" icon={<PhoneIcon />}>
+              <Button variant="outline" icon={<Icon name="phone" size={16} />}>
                 +91 79845 72082
               </Button>
-              <Button icon={<CalendarIcon />}>Book Consultation</Button>
+              <Button icon={<Icon name="calendar" size={16} />}>Book Consultation</Button>
             </div>
             <div
               className={styles.clinicImage}
@@ -76,14 +76,14 @@ export function WhyTrustSection() {
                         transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
                       }}
                     >
-                      <ChevronDownIcon size={18} />
+                      <Icon name="chevron-down" size={18} />
                     </span>
                   </button>
                   {isOpen && (
                     <div className={styles.body}>
                       <p>{item.desc}</p>
                       <button className={styles.learnMore}>
-                        Learn more <ArrowRightIcon size={14} />
+                        Learn more <Icon name="arrow-right" size={14} />
                       </button>
                     </div>
                   )}
