@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import { Button } from "@dentasure/ui";
 import { Icon } from "@dentasure/ui";
 import styles from "./why-trust.module.css";
@@ -15,6 +12,7 @@ const TRUST_ITEMS = [
     id: "cosmetic",
     title: "Cosmetic Dentistry",
     desc: "Enhance your smile with professional cosmetic treatments including veneers, whitening, and smile designing. Achieve the confident, radiant smile you've always deserved — tailored entirely to you.",
+    highlight: true,
   },
   {
     id: "restorative",
@@ -29,67 +27,46 @@ const TRUST_ITEMS = [
 ];
 
 export function WhyTrustSection() {
-  const [open, setOpen] = useState<string>("cosmetic");
-
   return (
-    <section className={`${styles.section} section-margin`}>
+    <section className={`${styles.whyTrustsection} section-margin-bottom`}>
       <div className="container">
-        <div className={styles.inner}>
-          <div className={styles.left}>
-            <h2 className={styles.title}>
-              Why Patients <em>Trust</em> Our Clinic
-            </h2>
-            <p className={styles.desc}>
-              From routine cleanings to complete smile makeovers, we utilise the
-              latest technology to ensure your treatment is efficient, effective,
-              and comfortable.
-            </p>
-            <div className={styles.actions}>
-              <Button variant="outline" icon={<Icon name="phone" size={16} />}>
-                +91 79845 72082
-              </Button>
-              <Button icon={<Icon name="calendar" size={16} />}>Book Consultation</Button>
+        <div className={`grid grid-cols-3 ${styles.inner}`}>
+          <div className="flex gap-4 flex-column justify-between">
+            <div className={styles.content}>
+              <h2 className={styles.title}>
+                Why Patients <em>Trust</em> Our Clinic
+              </h2>
+              <p className="subtitle">
+                From routine cleanings to complete smile makeovers, we utilise the
+                latest technology to ensure your treatment is efficient, effective,
+                and comfortable.
+              </p>
             </div>
-            <div
-              className={styles.clinicImage}
-              aria-label="DentaSure clinic interior"
-            />
+            <div className={`flex justify-center gap-2 flex-column ${styles.buttons}`}>
+              <div className="flex gap-2">
+                <Button variant="outline" icon={<Icon name="phone" size={20} />} className="full-width">
+                  +91 79845 72082
+                </Button>
+                <Button variant="outline" icon={<Icon name="phone" size={20} />} className="full-width">
+                  +91 79845 72082
+                </Button>
+              </div>
+              <Button icon={<Icon name="calendar" size={20} />} justifyContent="space-between">
+                Book Consultation
+              </Button>
+            </div>
           </div>
 
-          <div className={styles.accordion}>
-            {TRUST_ITEMS.map((item) => {
-              const isOpen = open === item.id;
-              return (
-                <div
-                  key={item.id}
-                  className={`${styles.item} ${isOpen ? styles.itemOpen : ""}`}
-                >
-                  <button
-                    className={styles.trigger}
-                    onClick={() => setOpen(isOpen ? "" : item.id)}
-                    aria-expanded={isOpen}
-                  >
-                    <span className={styles.itemTitle}>{item.title}</span>
-                    <span
-                      className={styles.chevron}
-                      style={{
-                        transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-                      }}
-                    >
-                      <Icon name="chevron-down" size={18} />
-                    </span>
-                  </button>
-                  {isOpen && (
-                    <div className={styles.body}>
-                      <p>{item.desc}</p>
-                      <button className={styles.learnMore}>
-                        Learn more <Icon name="arrow-right" size={14} />
-                      </button>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+          <div className={styles.itemList}>
+            {TRUST_ITEMS.map((item) => (
+              <div
+                key={item.id}
+                className={styles.item}
+              >
+                <h4 className={styles.itemTitle}>{item.title}</h4>
+                <p className={styles.itemDesc}>{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

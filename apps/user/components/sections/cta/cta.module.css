@@ -1,155 +1,49 @@
 /* ══ CTA BANNER ══════════════════════════════════════════════ */
 
-.inner {
-  background: var(--jt-dark-exact);
+.innerCanvas {
+  background: linear-gradient(360deg, #624231 0%, #9b6b51 100%);
   border-radius: var(--radius-3xl);
   padding: clamp(3rem, 6vw, 5rem) var(--space-8);
   text-align: center;
   position: relative;
   overflow: hidden;
 }
-
-/* decorative ambient circles */
-.inner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  top: -140px;
-  right: -100px;
-  bottom: auto;
-  left: auto;
-  width: 440px;
-  height: 440px;
-  border-radius: 50%;
-  background: oklch(from var(--jt-dark-base) calc(l + 0.24) c h / 0.1);
-  pointer-events: none;
+.innerWrapper{
+  max-width: 880px;
+  margin: 0 auto;
+    color: var(--jt-light-exact);
+}
+.preTitle {
+  background: linear-gradient(
+    90deg,
+    rgba(224, 183, 162, 0.12) 0%,
+    rgba(224, 183, 162, 0.12) 100%
+  );
+  border-radius: var(--radius-2xl);
+  -webkit-border-radius: var(--radius-2xl);
+  -moz-border-radius: var(--radius-2xl);
+  -ms-border-radius: var(--radius-2xl);
+  -o-border-radius: var(--radius-2xl);
+  padding: var(--space-3-5) var(--space-4);
+  font-weight: var(--font-weight-500);
+  color: var(--jt-light-exact);
+  line-height: var(--leading-none);
+  font-size: var(--font-md);
+  width: max-content;
+    margin: 0 auto;
 }
 
-.inner::after {
-  content: "";
-  position: absolute;
-  bottom: -110px;
-  left: 4%;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background: oklch(from var(--jt-light-base) l c h / 0.04);
-  pointer-events: none;
-}
 
-/* eyebrow — uppercase with flanking lines */
-.eyebrow {
-  font-family: var(--font-primary);
-  font-size: var(--font-xs);
-  font-weight: var(--font-weight-700);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: oklch(from var(--jt-dark-base) calc(l + 0.32) c h);
-  margin-bottom: var(--space-4);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  gap: var(--space-3);
-  position: relative;
-  z-index: 1;
-}
-
-.eyebrow::before,
-.eyebrow::after {
-  content: "";
-  width: 24px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.45;
-}
-
-.title {
-  font-family: var(--font-primary);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: var(--font-weight-700);
+.title{
   color: var(--jt-light-exact);
   line-height: var(--leading-tight);
-  text-wrap: balance;
-  margin-bottom: var(--space-4);
-  letter-spacing: -0.02em;
-  position: relative;
-  z-index: 1;
 }
 
-.sub {
-  font-family: var(--font-primary);
-  font-size: var(--font-md);
-  color: oklch(from var(--jt-dark-base) calc(l + 0.46) c h);
-  max-width: 460px;
-  margin-inline: auto;
-  margin-bottom: var(--space-8);
-  line-height: var(--leading-relaxed);
-  position: relative;
-  z-index: 1;
+.headWrap p{
+    color: var(--jt-light-exact);
 }
 
-.actions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: var(--space-3);
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
-}
-
-/* White-on-dark button overrides for dark section context */
-.phoneBtn {
-  background: transparent !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  border-color: rgba(255, 255, 255, 0.3) !important;
-}
-
-.phoneBtn:hover {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.6) !important;
-  color: var(--jt-light-exact) !important;
-  box-shadow: none !important;
-}
-
-.bookBtn {
-  background: var(--jt-light-exact) !important;
-  color: var(--jt-dark-exact) !important;
-  border-color: var(--jt-light-exact) !important;
-}
-
-.bookBtn:hover {
-  background: var(--jt-surface-page) !important;
-  border-color: var(--jt-surface-page) !important;
-  box-shadow: none !important;
-}
-
-/* ── Responsive ── */
-@media (max-width: 768px) {
-  .actions {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .inner {
-    border-radius: var(--radius-2xl);
-    padding: var(--space-10) var(--space-5);
-  }
+.buttons{
+  max-width: 400px;
+  margin: 0 auto;
 }
