@@ -183,6 +183,9 @@
 .px-8 {
   padding-inline: var(--space-8);
 }
+.pb-0 {
+  padding-block-end: 0;
+}
 
 .py-2 {
   padding-block: var(--space-2);
@@ -223,6 +226,9 @@
 }
 .mt-12 {
   margin-block-start: var(--space-12);
+}
+.mb-0 {
+  margin-block-end: 0;
 }
 .mb-2 {
   margin-block-end: var(--space-2);

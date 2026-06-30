@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import styles from "./button.module.css";
 
-export type ButtonVariant = "primary" | "outline";
+export type ButtonVariant = "primary" | "outline" | "secondary";
 export type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -17,6 +17,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const variantClass: Record<ButtonVariant, string> = {
   primary: styles.primary ?? "",
   outline: styles.outline ?? "",
+  secondary: styles.secondary ?? "",
 };
 
 const sizeClass: Record<ButtonSize, string> = {
