@@ -1,0 +1,96 @@
+.testimonials {
+  background: var(--jt-surface-tint);
+  padding-block: var(--space-20);
+  overflow: hidden;
+}
+
+.title {
+  margin-bottom: var(--space-4);
+}
+
+/* ── Slider ────────────────────────────────────────────────── */
+.sliderOuter {
+  margin-top: var(--space-16);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.testimonialWrapper {
+  display: flex;
+  gap: var(--space-4);
+  width: max-content;
+  animation: marquee 110s linear infinite;
+  -webkit-animation: marquee 110s linear infinite;
+}
+
+.testimonialWrapperReverse {
+  animation-direction: reverse;
+  -webkit-animation-direction: reverse;
+}
+
+.testimonialWrapper:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Card ──────────────────────────────────────────────────── */
+.reviewCard {
+  flex-shrink: 0;
+  width: clamp(280px, 28vw, 480px);
+  border: 1px solid var(--jt-border-subtle);
+  border-radius: var(--radius-3xl);
+  padding: var(--space-8);
+  color: var(--jt-dark-exact);
+  background: var(--jt-surface-card);
+}
+
+.reviewText {
+  font-family: var(--font-secondary);
+  font-size: var(--font-lg);
+  font-weight: var(--font-weight-500);
+  margin-bottom: var(--space-6);
+  line-height: var(--leading-relaxed);
+}
+
+.reviewFooter {
+  align-items: center;
+}
+
+.userInfo .name {
+  font-size: var(--font-lg);
+  font-weight: var(--font-weight-600);
+}
+
+.userInfo .date {
+  font-size: var(--font-xs);
+  font-weight: var(--font-weight-300);
+  color: var(--jt-text-muted);
+  margin-top: var(--space-1);
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.userImage img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: var(--radius-2xl);
+  -webkit-border-radius: var(--radius-2xl);
+  -moz-border-radius: var(--radius-2xl);
+  -ms-border-radius: var(--radius-2xl);
+  -o-border-radius: var(--radius-2xl);
+}

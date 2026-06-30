@@ -147,7 +147,8 @@
 	--h6-font: clamp(0.875rem, 0.938vw, 1.125);  /* ≈ 18px */
 	
 	/* size scale */
-	--font-lg:  clamp(3.5rem, 3.333vw, 4rem);      /* ≈ 64px */
+	--font-xl:  clamp(3.5rem, 3.333vw, 4rem);      /* ≈ 64px */
+	--font-lg:  var(--h6-font);      /* ≈ 18px */
 	--font-md:  clamp(0.875rem, 2vw, 1rem);      /* ≈ 14–16px */
 	--font-sm:  clamp(0.8125rem, 0.729vw, 0.875rem); /* ≈ 13–14px */
 	--font-xs:  0.75rem;                           /* 12px      */

@@ -35,14 +35,14 @@ export function Header() {
           </nav>
           <div className={styles.logo}>
             <Link href="/home" className={styles.logoLink}>
-              <Image
+              {/* <Image
                 src={MainLogo}
                 width={250}
                 height={80}
                 alt="Main Logo"
                 loading="lazy"
                 priority={false}
-              />
+              /> */}
             </Link>
           </div>
           <nav className={`flex gap-2 items-center justify-end ${styles.navButtons}`}>

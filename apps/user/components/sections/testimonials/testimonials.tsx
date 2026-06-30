@@ -1,5 +1,10 @@
-import { Icon } from "@dentasure/ui";
+"use client";
+
 import styles from "./testimonials.module.css";
+import Image from "next/image";
+
+const StarImage = "/images/star.svg";
+const userImage = "/images/user.jpg";
 
 const TESTIMONIALS = [
   {
@@ -40,45 +45,57 @@ const TESTIMONIALS = [
   },
 ];
 
+function ReviewCard({ t }: { t: (typeof TESTIMONIALS)[number] }) {
+  return (
+    <div className={styles.reviewCard}>
+      <p className={styles.reviewText}>&ldquo;{t.text}&rdquo;</p>
+      <div className={`flex items-center gap-2 justify-between ${styles.reviewFooter}`}>
+        <div className={styles.userInfo}>
+          <div className={styles.name}>{t.name}</div>
+          <div className={styles.date}>{t.date}</div>
+        </div>
+        <div className="flex items-center gap-4">
+          <div className={styles.stars}>
+            {Array.from({ length: 5 }).map((_, si) => (
+              <Image key={si} src={StarImage} alt="" width={16} height={16} aria-hidden />
+            ))}
+          </div>
+          <div className={styles.userImage}>
+            <Image src={userImage} alt={t.name} width={48} height={48} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function TestimonialsSection() {
   return (
-    <section className={`${styles.testimonials} section-margin`}>
+    <section className={styles.testimonials}>
       <div className="container">
-        <div className={styles.heading}>
+        <div className="text-center">
           <h2 className={styles.title}>
             What Our <em>Patients</em> Say
           </h2>
-          <p className={styles.sub}>
-            We take pride in delivering exceptional results that never fall
-            short of expectations. But don&apos;t take our word for it.
+          <p className="subtitle">
+            We take pride in delivering exceptional solutions that deliver great{" "}
+            <br />
+            results. But don't just take our word for it.
           </p>
         </div>
       </div>
 
-      <div className={styles.track}>
-        {TESTIMONIALS.map((t) => (
-          <div key={t.id} className={styles.card}>
-            <div className={styles.openQuote}>&ldquo;</div>
-            <p className={styles.text}>{t.text}</p>
-            <div className={styles.footer}>
-              <div className={styles.avatar}>
-                {t.name
-                  .split(" ")
-                  .map((w) => w[0])
-                  .join("")}
-              </div>
-              <div className={styles.meta}>
-                <div className={styles.name}>{t.name}</div>
-                <div className={styles.date}>{t.date}</div>
-              </div>
-              <div className={styles.stars}>
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Icon key={i} name="star" size={14} />
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className={styles.sliderOuter}>
+        {/* Row 1 — scrolls left */}
+        <div className={styles.testimonialWrapper}>
+          {TESTIMONIALS.map((t) => <ReviewCard key={t.id} t={t} />)}
+          {TESTIMONIALS.map((t) => <ReviewCard key={`dup1-${t.id}`} t={t} />)}
+        </div>
+        {/* Row 2 — scrolls right */}
+        <div className={`${styles.testimonialWrapper} ${styles.testimonialWrapperReverse}`}>
+          {TESTIMONIALS.map((t) => <ReviewCard key={`r2-${t.id}`} t={t} />)}
+          {TESTIMONIALS.map((t) => <ReviewCard key={`r2-dup-${t.id}`} t={t} />)}
+        </div>
       </div>
     </section>
   );
