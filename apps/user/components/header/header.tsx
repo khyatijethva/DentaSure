@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button } from "@dentasure/ui";
+import { Button, Icon } from "@dentasure/ui";
 import styles from "./header.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -45,9 +45,22 @@ export function Header() {
               /> */}
             </Link>
           </div>
-          <nav className={`flex gap-2 items-center justify-end ${styles.navButtons}`}>
-            <Button variant="outline">+91 79845 72082</Button>
-            <Button>Book Consultation</Button>
+          <nav
+            className={`flex gap-2 items-center justify-end ${styles.navButtons}`}
+          >
+            <Button
+              variant="outline"
+              icon={<Icon name="phone" size={20} />}
+            >
+              +91 79845 72082
+            </Button>
+            <Button
+              variant="primary"
+              icon={<Icon name="calendar" size={20} />}
+              justifyContent="space-between"
+            >
+              Book Consultation
+            </Button>
           </nav>
         </div>
       </div>

@@ -18,10 +18,11 @@
   },
   "devDependencies": {
     "@dentasure/typescript-config": "workspace:*",
+    "@eslint/eslintrc": "^3",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@eslint/eslintrc": "^3",
     "eslint": "^9",
     "eslint-config-next": "^15",
     "typescript": "^5"
