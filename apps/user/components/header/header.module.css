@@ -125,29 +125,127 @@
   flex-shrink: 0;
 }
 
-/* ── Responsive ── */
+/* ── Hamburger button ── */
+.desktopCta {
+  display: contents;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--jt-dark-exact);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.barTop {
+  transform: translateY(7px) rotate(45deg);
+}
+.barMid {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.barBot {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile nav drawer ── */
+.mobileNav {
+  display: none;
+  background: var(--jt-light-exact);
+  border-top: 1px solid var(--jt-border-subtle);
+  box-shadow: 0 8px 24px oklch(from var(--jt-dark-base) l c h / 0.08);
+}
+
+.mobileNavOpen {
+  display: block;
+}
+
+.mobileNavList {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2) 0;
+}
+
+.mobileNavList li a {
+  display: block;
+  padding: var(--space-3) 0;
+  font-size: var(--font-md);
+  font-weight: var(--font-weight-500);
+  color: var(--jt-neutral-950);
+  border-bottom: 1px solid var(--jt-border-subtle);
+}
+
+.mobileCta {
+  padding-block: var(--space-4) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Logo shrinks before hamburger kicks in */
+@media (max-width: 1199px) {
+  .logoLink {
+    position: relative;
+    padding: 6px 0;
+  }
+  .logoLink img {
+    width: 160px;
+  }
+}
+
+/* Nav links condense */
 @media (max-width: 1024px) {
   .navLinks ul {
     gap: var(--space-4);
   }
 }
 
-@media (max-width: 768px) {
+/* Hamburger starts at 991px */
+@media (max-width: 991px) {
   .navLinks {
     display: none;
   }
-
   .headerWrapper {
     grid-template-columns: 1fr auto !important;
   }
-
   .logo {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
   }
+  .hamburger {
+    display: flex;
+  }
+  .desktopCta {
+    display: none;
+  }
+}
 
-  .logoLink {
-    padding-inline: 0;
+@media (max-width: 768px) {
+  .logoLink img {
+    width: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoLink img {
+    width: 110px;
   }
 }

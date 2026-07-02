@@ -98,3 +98,25 @@
   -ms-border-radius: var(--radius-2xl);
   -o-border-radius: var(--radius-2xl);
 }
+
+@media (max-width: 768px) {
+  .testimonials {
+    padding-block: var(--space-16);
+  }
+  .testimonialWrapperReverse {
+    display: none;
+  }
+  .reviewCard {
+    width: clamp(260px, 75vw, 380px);
+  }
+}
+
+@media (max-width: 480px) {
+  .reviewCard {
+    width: clamp(240px, 85vw, 340px);
+    padding: var(--space-6);
+  }
+  .reviewText {
+    font-size: var(--font-md);
+  }
+}

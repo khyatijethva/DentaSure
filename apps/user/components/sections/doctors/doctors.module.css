@@ -40,3 +40,21 @@
   margin-bottom: var(--space-4);
   display: block;
 }
+
+@media (max-width: 1024px) {
+  .teamgrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-top: var(--space-16);
+  }
+  .card:nth-child(1),
+  .card:nth-child(2) {
+    grid-column: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .teamgrid {
+    grid-template-columns: 1fr;
+    padding-top: var(--space-12);
+  }
+}
