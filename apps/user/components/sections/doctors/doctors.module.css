@@ -1,6 +1,7 @@
 .ourTeam {
   background: var(--jt-surface-tint);
   padding-block: var(--space-20);
+  position: relative;
 }
 
 .teamgrid {

@@ -22,7 +22,7 @@ const DOCTORS = [
 
 export function DoctorsSection() {
   return (
-    <section className={`${styles.ourTeam}`}>
+    <section className={`${styles.ourTeam} border`}>
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="title">

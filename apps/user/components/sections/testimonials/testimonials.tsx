@@ -71,6 +71,7 @@ function ReviewCard({ t }: { t: (typeof TESTIMONIALS)[number] }) {
 
 export function TestimonialsSection() {
   return (
+    <div className={`${styles.testimonialsSection} border`}>
     <section className={styles.testimonials}>
       <div className="container">
         <div className="text-center">
@@ -98,5 +99,6 @@ export function TestimonialsSection() {
         </div>
       </div>
     </section>
+    </div>
   );
 }
